@@ -1,3 +1,3 @@
 leetcode
 ========
-Leet Code... http://oj.leetcode.com/problems/
+Leet Code  http://oj.leetcode.com/problems/
