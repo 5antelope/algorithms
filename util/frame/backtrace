@@ -1,0 +1,11 @@
+backtrace() {
+  if (_end_condition)
+    return result;
+  else 
+    for (i = 1: all possible candidates)
+      assign values;
+      if (_check_validation.. if pass: recursively goes into next)
+        validate: backtrace ();
+      else 
+        continue for-loop for next candidates
+}
