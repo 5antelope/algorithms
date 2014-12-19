@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class QuickSort {
   public QuickSort(int[] array) {
     QSort(array,0,array.length-1);
