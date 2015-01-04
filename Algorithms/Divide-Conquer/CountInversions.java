@@ -1,5 +1,5 @@
-public class Solution {
-	public static int subroutine(int[] arr, int l, int r) {
+public class CountInversions {
+    public static int subroutine(int[] arr, int l, int r) {
         if (l == r-1)
             return 0;
         int m = (l+r)/2;
