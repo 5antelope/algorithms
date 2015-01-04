@@ -1,0 +1,10 @@
+1. helper functions need to be implemented:
+  -. subroutine() [also serve as entry]
+  -. merger()
+
+2. subroutine(int[], left, right)
+  *. the left & right should change in every recursions
+  
+3. Be aware of the right-index
+  +. follow java routine: (l, r]
+  
