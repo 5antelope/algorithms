@@ -1,5 +1,5 @@
 1. helper functions need to be implemented:
-  -. subroutine() [also serve as entry]
+  -. subroutine() [also serve as entry] 
   -. merger()
 
 2. subroutine(int[], left, right)
