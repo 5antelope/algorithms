@@ -7,4 +7,4 @@
   
 3. Be aware of the right-index
   +. follow java routine: (l, r]
-  
+  +. mid-index = (l+r)/2 flowing the (] rule
