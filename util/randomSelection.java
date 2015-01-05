@@ -2,10 +2,12 @@ public class RandomSelection {
     private static int index;
     public static void rSelection(int[] arr, int l, int r, int i) {
         while ((index=partition(arr, l, r))!=i) {
-            if (index > i)
+            if (index == i)
+                return;
+            else if (index > i)
                 rSelection(arr, l, index-1, i);
             else {
-                rSelection(arr, index+1, r, i-index);
+                rSelection(arr, index+1, r, i);
             }
         }
     }
