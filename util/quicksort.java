@@ -21,7 +21,7 @@ public class QuickSort {
       while(l<r && array[r]>=pivot)
         r--;
       // just replace, no need for swap  
-      array[r] = array[l];
+      array[l] = array[r];
       while(l<r && array[l]<=pivot)
         l++;
       array[r] = array[l];
