@@ -24,7 +24,7 @@ public class QuickSort {
       array[r] = array[l];
       while(l<r && array[l]<=pivot)
         l++;
-      array[r] = array[r];
+      array[r] = array[l];
     }
     array[l] = pivot;
     return l;
