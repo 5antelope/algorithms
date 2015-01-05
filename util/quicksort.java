@@ -6,7 +6,7 @@ public class QuickSort {
   }
   
   private void QSort(int[] array, int l, int r) {
-    while(l<r) {
+    while(l<r) { // do not miss this ENDING condition
       int pivot = partition(array, l, r);
       QSort(array, l, pivot-1);
       // does not recursively call QSort, for stack sake
@@ -18,7 +18,7 @@ public class QuickSort {
     int pivot = array[l];
     while (l<r) {
       // order matters
-      while(l<r && array[r]>=pivot)
+      while(l<r && array[r]>=pivot)   // leave equal element unchange
         r--;
       // just replace, no need for swap  
       array[l] = array[r];
