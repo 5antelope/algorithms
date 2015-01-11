@@ -23,7 +23,7 @@ Class Stack {
     return p;
   }
   public void push(Node node) {
-    top.next = node;
+    node.next = top;
     top = node;
   }
 }
