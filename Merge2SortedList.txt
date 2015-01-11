@@ -1,0 +1,9 @@
+iterative:
+  
+
+recursive:
+  everytime return the min.value of 2 array
+
+1. iterative is faster than recursive
+2. iterate through two arrays: 
+    use while(ture) + interal_break_conditions
