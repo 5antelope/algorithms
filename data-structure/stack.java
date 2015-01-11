@@ -9,18 +9,23 @@ Class Node {
 // use linked list for stack / queue
 Class Stack {
   Node top;
-  public Stack(Node n) {
-    top = n;
-  }
   public Node peek () {
-    Node p = top;
-    top = p.next;
-    return p;
+    if (top == null) {
+      return null;
+    }
+    else 
+      // peek does not modify stack, only return
+      return top;
   }
   public Node pop () {
-    Node p = top;
-    top = p.next;
-    return p;
+    if (top == null) {
+      return null;
+    }
+    else {
+      Node p = top;
+      top = p.next;
+      return p;
+    }
   }
   public void push(Node node) {
     node.next = top;
