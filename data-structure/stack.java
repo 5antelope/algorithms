@@ -6,7 +6,9 @@ Class Node {
     this.next = null;
   }
 }
-// use linked list for stack / queue
+/* use linked list for stack / queue
+  in Java, LinkedList implementes 'queue' interface
+  */
 Class Stack {
   Node top;
   public Node peek () {
