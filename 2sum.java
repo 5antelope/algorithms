@@ -1,17 +1,16 @@
 public class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int size = numbers.length;
-        Arrays.sort(numbers); // Arrays.sort returns void!
-        int left = 0, right = size-1;
-        while (left<right) {
-            if (sortedArray[left]+sortedArray[right] > target)
-                right--;
-            else if (sortedArray[left]+sortedArray[right] < target) 
-                left++;
-            else {
-                int[] idx = {left+1, right+1};
-                return idx;
-            } 
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i=0; i<size; i++) {
+            int dif = target - numbers[i];
+            if (map.containsKey(dif)) {
+                int idx1 = map.get(dif);
+                int idx2 = i+1;
+                int[] res = {idx1, idx2};
+                return res;
+            }
+            map.put(numbers[i],i+1);
         }
         return null
     }
