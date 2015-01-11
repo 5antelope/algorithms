@@ -1,7 +1,7 @@
 public class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int size = numbers.length;
-        int[] sortedArray = Arrays.sort(numbers);
+        Arrays.sort(numbers); // Arrays.sort returns void!
         int left = 0, right = size-1;
         while (left<right) {
             if (sortedArray[left]+sortedArray[right] > target)
