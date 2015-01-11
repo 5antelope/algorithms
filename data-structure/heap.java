@@ -39,8 +39,10 @@ public class Heap {
     public void bubbleDown () {
         int i = 1;
         int tempMin, tempIndex;
-        while (heap[2*i]!=null) { // terminate when hit the leaf
-            // bubble with smaller child if existed
+        while ((2*i)<heap.length      // in case test some index does not exist yet
+                && heap[2*i]!=null)   // terminate when hit the leaf 
+        {
+             // bubble with smaller child if existed
             if (heap[2*i+1]==null) {
                 tempMin = heap[2 * i];
                 tempIndex = 2 * i;
