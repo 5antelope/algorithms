@@ -1,0 +1,7 @@
+for i=1:n
+  check dif = target-current in HashMap
+  
+running time=O(n)
+
+- not suitable for 2 sorted - pointers,
+  real index required
