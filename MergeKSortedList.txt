@@ -7,4 +7,4 @@
 
 some thoughts about linkedList:
     - use a dummy to flag the header for return;
-    - directly use the initial node, instead of creating a new one with same values, can preserve the link-relations!
+    - directly use the initial node, instead of creating a new one with same values, can conserve the link-relations!
