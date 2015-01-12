@@ -1,0 +1,16 @@
+1. naive: 2 pass
+  1-pass: use two pointers!
+
+2. input:
+   0 1 2 0 1
+  ||        |
+  rp        b
+  r=-1, p=0, b=n
+  
+   output:
+   0 0 1 1 2
+     |   | |
+     r   p b
+     
+     
+3. swich can be faster than if-else statements
