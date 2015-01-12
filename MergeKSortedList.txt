@@ -1,0 +1,5 @@
+1. use PriorityQueue (Heap) to sort lists of elements
+    fast extract min./ max. : O(log n)
+
+2. by default, PriorityQueue uses minHeap. 
+    can provide specific comparator if needed
