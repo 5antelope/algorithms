@@ -23,7 +23,7 @@ public class Solution {
                 num[i] = tmp;
                 
                 permutation(num, l+1);
-                
+                // restore.., going back
                 tmp = num[i];
                 num[i] = num[l];
                 num[l] = tmp;
