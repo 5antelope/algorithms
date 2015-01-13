@@ -4,6 +4,7 @@ public class Solution {
         List<List<Integer>> lists = new ArrayList<List<Integer>>();
         Arrays.sort(num);
         for (int i=0; i<n-2; i++) {
+            if (i>0 && num[i]==num[i-1])    continue;   // avoid duplicate
             int l=i+1;
             int r=n-1;
             while (l<r) {
@@ -13,8 +14,11 @@ public class Solution {
                     list.add(num[i]);
                     list.add(num[l++]);
                     list.add(num[r--]);
-                    if (!lists.contains(list))
-                        lists.add(list);
+                    // cost extra O(n), make O(n^3) in all... bad!
+                    //if (!lists.contains(list))
+                    //    lists.add(list);
+                    while (l>r && num[l]==num[l-1]) l++;
+                    while (l>r && num[r]==num[r+1]) r--;
                 }
                 else if (sum>0)
                     r--;
