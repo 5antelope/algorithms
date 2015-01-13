@@ -1,0 +1,9 @@
+1. the for-loop still obey the # of constraint-factors
+
+2. The idea is from dynamic programming: 
+    the max profit at day i is the max profit before day i + max profit after day i. 
+    -. So there is one loop O(n) to compute the max profit before each each day 
+    -. and another loop O(n) to get the final max profit by compute the max profit after each day reversely 
+    -. and combine the "before day" max profit.
+    
+*3. DP-subproblem: iterate the array to find seperate point k!
