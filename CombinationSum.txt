@@ -1,0 +1,12 @@
+another combination problem,
+  - because the reversed order does not count as a new solution: iteration-pointer has to go forwards
+  - if the element took out does not put back: use for;
+    otherwise, use while for loop!
+    
+   DFS
+    [1,2]
+    /  \
+  1 2  1 2 
+ / \
+1   2
+......
