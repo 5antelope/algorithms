@@ -1,0 +1,3 @@
+1. Swap the 1st element with all the elements, including itself.
+2. Then the 1st element is fixed, go to the next element.
+3. Until the last element is fixed. Output.
