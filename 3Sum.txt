@@ -1,0 +1,7 @@
+1. array + sum : 
+  - sort first
+  - two pointers
+
+2. naive thought: use List.contains() to remove duplicate,
+  but both arraylist && linkedlist costs O(n) for contains() method.
+  make the running time from O(n^2) to O(n^3)
