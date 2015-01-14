@@ -24,7 +24,8 @@ public class Solution {
             LinkedList<Integer> tmp = new LinkedList<Integer>(list);
             tmp.add(num[cp+i]);
             subsets(num,deep+1,cp+i+1,tmp,len);
-            pre = num[cp+i];    // a common way to deal with duplicate in array for DFS
+            // a common way to deal with duplicate in array for DFS: same spot cannot have same val. at dif pos
+            pre = num[cp+i];    
         }
     }
 }
