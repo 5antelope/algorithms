@@ -16,7 +16,13 @@ public class Solution {
             return;
         }
         else {
-            // backtrace idea... swap for permutation (included itself)
+            /*
+                backtrace idea... swap for permutation (included itself)
+                gerneral backtrace:
+                    - flag / modify sth.
+                    - recursive call
+                    - unflag/ undo sth.
+            */
             for (int i=l; i<n; i++) {
                 int tmp = num[l];
                 num[l] = num[i];
