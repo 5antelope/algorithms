@@ -1,22 +1,17 @@
 public class Solution {
-    boolean b = false;
-    public boolean canJump(int[] A) {
-        int n = A.length;
-        if (n<1)    return b;
-        jump(A,n-1,0);
-        return b;
-    }
-    public void jump(int[] A, int t, int cp) {
-        if (cp==t) {
-            b = true;
-            return;
-        }
-        else {
-            int i = cp;
-            for (int stp=1; i<A.length-1 && stp<=A[i]; stp++) {
-                i += stp;
-                jump(A,t,i);
+    public class Solution {
+        public boolean canJump(int[] A) {
+            int n = A.length;
+            if (n<1)    return false;
+            int p1 = 0;
+            int p2 = 0;
+            while (p1<=p2 &&    // in case 0 in array cause dead-loop
+                p2<n)           // cannot take equal for input's len = 1
+            {
+                p2 = Math.max(p2, p1+A[p1++]);
+                if (p2 >= n-1) return true;
             }
+            return false;
         }
     }
 }
