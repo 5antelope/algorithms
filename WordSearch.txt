@@ -1,0 +1,18 @@
+About backtrace:
+  1. usually needs flag or pointer
+    +-----------------------------------------+
+    |       update flag                       |
+    |       backtrace...                      |
+    |       restore flag                      |
+    +-----------------------------------------+
+    
+  2. in the resursive part
+    +-----------------------------------------+
+    |       if cond. for term.                |
+    |       else                              |
+    |         - check boundary                |
+    |         - backtrace frame               |
+    +-----------------------------------------+
+    
+    
+    
