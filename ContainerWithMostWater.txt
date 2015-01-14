@@ -1,0 +1,8 @@
+- DP:
+  does not satisfy optinal structure
+
+- bruce force
+  time limit exceed
+
+- Use two pointers, one from the start and one from the end of the height vector. 
+  Compute the current area, move the smaller pointer (limits cur. max) to its direction, until two pointers meet.
