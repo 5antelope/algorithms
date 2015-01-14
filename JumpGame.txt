@@ -1,0 +1,9 @@
+DP:
+  - subproblem:
+      at position k, the max range is 
+        either from k go n steps (n<max)
+        or max range from previous steps
+        
+      i.e. rec(k) = max(rec(k-1),k+step(k))
+      
+      because only needs the max.value record: only need a int to store, instead of array or table for record
