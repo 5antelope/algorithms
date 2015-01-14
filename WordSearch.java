@@ -2,7 +2,7 @@ public class Solution {
     public boolean exist(char[][] board, String word) {
         int m = board.length;
         int n = board[0].length;
-        boolean[][] flag = new boolean[m][n];
+        boolean[][] flag = new boolean[m][n];   // flag is needed as the same ele. cannot be used twice
         for (int i=0; i<m; i++) {
             for (int j=0; j<n; j++) {
                 if (search(board, word,flag, i, j, 0))
@@ -22,6 +22,7 @@ public class Solution {
             return false;
         if (board[i][j]!=word.charAt(cp))
             return false;
+        // typical DFS frame!
         flag[i][j] = true;
         if (search(board, word, flag, i-1, j, cp+1))
             return true;
