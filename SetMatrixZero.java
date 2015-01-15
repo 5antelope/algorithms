@@ -1,3 +1,8 @@
+/*
+    use the matrix itself to store the flags for each row and column if they need to set to 0. 
+    So we need 1 row and 1 column, the 1st row and 1st column then can be chosen to store the flag. 
+    But we need first check the two if they need to be 0. Then go the other rows and columns.
+ */
 public class Solution {
     public void setZeroes(int[][] matrix) {
         boolean r1 = false;
