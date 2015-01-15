@@ -7,9 +7,9 @@ public class BinarySearch {
         while (l<=r) {
             int mid = (l + r)/2;
             if (key > array[mid])
-                l = mid;
+                l = mid+1;
             else if (key < array[mid])
-                r = mid;
+                r = mid-1;
             else
                 return mid;
         }
