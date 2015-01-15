@@ -1,4 +1,5 @@
 public class Solution {
+    // O(n^2), exceed time limit :(
     public int removeDuplicates(int[] A) {
         int n = A.length;
         if (n<1) return 0;
@@ -15,5 +16,16 @@ public class Solution {
                 tmp = A[i++];
         }
         return n;
+    }
+    
+    // better solution O(n)!!!!!!!!
+    public int removeDuplicates(int[] A) {
+        int k=0;
+        if (A.length<1) return 0;
+        for (int i=0; i<A.length; i++) {
+            if (i==0 || A[i]!=A[i-1])
+                A[k++] = A[i];
+        }
+        return k;
     }
 }
