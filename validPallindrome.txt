@@ -1,8 +1,0 @@
-1. use Character.isDigit(), .isLetter to test alphanumeric! 
-  same efficiency with compare directly with ascii
-  
-2. in ascii:
-  digit < Upper case < Lower case! 
-  
-  
-  
