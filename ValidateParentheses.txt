@@ -1,0 +1,3 @@
+- DFS, use stack!
+
+- running time: O(n)
