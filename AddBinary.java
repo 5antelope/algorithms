@@ -13,7 +13,7 @@ public class Solution {
         return Integer.toBinaryString(num1+num2);
     }
     /*
-        AC Version
+        AC Version:
         1. to it bit by bit
         2. StringBuilder append at tail;
             if wanna add at head, concat strings
