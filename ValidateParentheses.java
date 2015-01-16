@@ -1,4 +1,6 @@
-
+/*
+    not nested parentheses..
+ */
 public class Solution {
     public boolean isValid(String s) {
         if (s.length()<1) return true;
