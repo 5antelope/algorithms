@@ -1,2 +1,8 @@
-statistic problem about characters: Hash (simulate array).
+statistic problem about characters: Hash (simulate with array).
   also because the # of chars is limited, len = 256 is enough and no need for hash func.
+  
+
+
+
+从左往右扫描，当遇到重复字母时，以上一个重复字母的index +1，作为新的搜索起始位置。
+
