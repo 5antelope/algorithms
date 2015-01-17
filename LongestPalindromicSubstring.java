@@ -1,6 +1,6 @@
 /*
     DP
-    to check (i,j) is palidrome or not:
+    to check (i,j) is palidrome or not :
         (i,j) = (i+1,j-1) && s[i]==s[j]
 */
 public class Solution {
