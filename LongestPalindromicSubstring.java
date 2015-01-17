@@ -1,4 +1,8 @@
-
+/*
+    DP
+    to check (i,j) is palidrome or not:
+        (i,j) = (i+1,j-1) && s[i]==s[j]
+*/
 public class Solution {
     public String longestPalindrome(String s) {
         int n = s.length();
@@ -6,6 +10,7 @@ public class Solution {
         char[] str = s.toCharArray();
         int sp = 0, maxLen = 0;
         boolean[][] table = new boolean[n][n];
+        // init. states
         for (int i=0; i<n; i++) { table[i][i] = true; maxLen = 1; sp = i;}
         for (int i=0; i<n-1; i++) {
             if (str[i]==str[i+1]) { table[i][i+1] = true; maxLen = 2; sp = i;}
