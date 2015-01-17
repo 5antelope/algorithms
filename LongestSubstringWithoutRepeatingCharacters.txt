@@ -1,0 +1,2 @@
+statistic problem about characters: Hash (simulate array).
+  also because the # of chars is limited, len = 256 is enough and no need for hash func.
