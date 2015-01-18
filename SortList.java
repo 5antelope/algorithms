@@ -8,6 +8,9 @@
  *         next = null;
  *     }
  * }
+ * 
+ * 单链表适合用归并排序，双向链表适合用快速排序
+ * 
  */
 public class Solution {
     public ListNode sortList(ListNode head) {
