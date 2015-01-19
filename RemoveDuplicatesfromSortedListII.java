@@ -1,18 +1,24 @@
+/**
+ * question about list node. 3 references need to create/ reserve:
+ * 
+ *      1. head node
+ *      2. tail node / mid node
+ *      3. previous node
+ */
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if (head==null || head.next==null) return head;
-        ListNode newHeader = new ListNode(head.val-1); // put results
-        ListNode temp = head;
-        ListNode p = newHeader;
-        while (temp!=null) {
-            boolean dup = false;
-            while (temp.next!=null && temp.val==temp.next.val){
-                dup = true;
-                temp = temp.next;
-            }
-            if (!dup)   {p.next = new ListNode(temp.val); p = p.next; temp = temp.next;}
-            else temp = temp.next;
+        ListNode p = new ListNode(0); // put results
+        p.next = head;
+        head = p; // still use head to point begin of list
+        ListNode pre = p; // need a ref to previous node
+        while (p!=null) {
+            while (p.next!=null && p.val==p.next.val)
+                p = p.next;
+            if (pre.next==0)    pre = pre.next;
+            else pre.next = p.next;
+            p = p.next;
         }
-        return newHeader.next;
+        return header.next;
     }
 }
