@@ -1,6 +1,6 @@
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        if (head==null) return null;
+        if (head==null || head.next==null) return null;
         ListNode tmp = new ListNode(head.val-1);
         tmp.next = head;
         ListNode p   = tmp;
