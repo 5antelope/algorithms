@@ -1,3 +1,9 @@
+/**
+ * List node 3 general questions:
+ *      -. reverse list
+ *      -. fast/ slow pointer
+ *      -. merge lists
+ */
 public class Solution {
     // O(n^2) solutin, exceed time limit
     public void reorderList(ListNode head) {
@@ -37,10 +43,11 @@ public class Solution {
             pre = cur;
             cur = next;
         }
-        mid.next.next = null;
+        mid.next.next = null; // clean up tails
         mid.next = null;
         cur = pre;
         pre = head;
+        // merge up
         while (cur!=null) {
             ListNode tmp1 = pre.next;
             ListNode tmp2 = cur.next;
