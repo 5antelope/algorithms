@@ -1,4 +1,5 @@
 public class Solution {
+    // O(n^2) solutin, exceed time limit
     public void reorderList(ListNode head) {
         if (head==null || head.next==null)  return;
         int len = 1;
@@ -18,5 +19,35 @@ public class Solution {
         }
         if (len>2 && len%2==0)   cur.next.next=null;
         else if (len>2 && len%2==1)    cur.next=null;
+    }
+    // AC!
+    public void reorderList(ListNode head) {
+        if (head==null || head.next==null)  return;
+        ListNode mid=head, tail=head;
+        while (tail.next!=null && tail.next.next!=null){
+            mid = mid.next;
+            tail = tail.next.next;
+        }
+        // reverse 2nd. half
+        ListNode pre = mid.next;
+        ListNode cur = pre.next;
+        while (cur!=null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        mid.next.next = null;
+        mid.next = null;
+        cur = pre;
+        pre = head;
+        while (cur!=null) {
+            ListNode tmp1 = pre.next;
+            ListNode tmp2 = cur.next;
+            pre.next = cur;
+            cur.next = tmp1;
+            pre = tmp1;
+            cur = tmp2;
+        }
     }
 }
