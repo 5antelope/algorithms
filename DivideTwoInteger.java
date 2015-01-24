@@ -3,11 +3,11 @@ public class Solution {
         if (divisor==0) return Integer.MAX_VALUE;
         if (divisor==1) return dividend;
         int res = 0;
-        if(dividend == Integer.MIN_VALUE) {
+        // take care with Integer.MIN_VALUE's abs value!
+        if (dividend == Integer.MIN_VALUE) {
             dividend += Math.abs(divisor);
-            if(divisor == -1) {
+            if (divisor == -1)
                 return Integer.MAX_VALUE;
-            }
             res++;
         }
         if(divisor == Integer.MIN_VALUE)    return res;  
