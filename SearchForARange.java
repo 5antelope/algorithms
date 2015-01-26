@@ -23,7 +23,7 @@ public class Solution {
         }
         return -1;
     }
-    public int[] warpUp (int[] A, int i) {
+    public int[] warpUp(int[] A, int i) {
         int l = i;
         while (l-1>=0) {
             if (A[l-1]==A[l])
