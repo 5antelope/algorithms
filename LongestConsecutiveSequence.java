@@ -11,7 +11,7 @@ public class Solution {
             int tmp = set.iterator().next();
             int cur = tmp;
             /**
-             *
+             *  remove cur because it should not also exist in other's list
              */
             set.remove(tmp);
             while (set.contains(++cur)) {set.remove(cur);max++;}
