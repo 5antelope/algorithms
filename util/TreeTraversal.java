@@ -5,8 +5,8 @@ public void preorder(TreeNode root) {
   /** root - left - right. 
    * stack pop first, then right - left
   */
-  while (!s.isEmpty()) {
-    cur = s.pop();
+  while (!s.isEmpty()) {  // "推-右-左"
+    cur = s.pop();  
     System.out.println(cur.val);
     if (cur.right!=null) s.push(cur.right);
     if (cur.left!=null)  s.push(cur.left);
@@ -21,7 +21,7 @@ public void inorder(TreeNode root) {
    * otherwise might get into loop (go left vs. visit cur): deal only with cur!
   */
   TreeNode cur = root;
-  while (!stack.isEmpty() || cur!=null) {
+  while (!stack.isEmpty() || cur!=null) { // "左死-右死"
     if (cur!=null) {
       stack.push(cur);
       cur = cur.left;
