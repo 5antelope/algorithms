@@ -5,7 +5,7 @@ public void preorder(TreeNode root) {
   /** root - left - right. 
    * stack pop first, then right - left
   */
-  while (!s.isEmpty()) {  // "推-右-左"
+  while (!s.isEmpty()) {  // "弹-右-左"
     cur = s.pop();  
     System.out.println(cur.val);
     if (cur.right!=null) s.push(cur.right);
