@@ -1,7 +1,7 @@
 ... {
-  ListNode pre = head;
-  ListNode cur = pre.next;
-  ListNode next;
+  ListNode pre  = head; // start of the list that needs to be reversed
+  ListNode cur  = pre.next;
+  ListNode next = null;
   while (cur!=null) {
     next = cur.next;
     cur.next = pre; // from 'pre -> cur' to 'pre <- cur'
