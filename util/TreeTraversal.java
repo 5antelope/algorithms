@@ -32,9 +32,9 @@ public void inorder(TreeNode root) {
       cur = cur.right;
     /* visualization of case: 
      *   x
-	   *    \  
-	   *     y
-	   */
+     *    \  
+     *     y
+     */
     }
   }
 }
