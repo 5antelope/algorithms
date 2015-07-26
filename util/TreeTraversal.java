@@ -30,6 +30,11 @@ public void inorder(TreeNode root) {
       cur = s.pop();
       System.out.println(cur.val);
       cur = cur.right;
+    /* visualization of case: 
+     *   x
+	   *    \  
+	   *     y
+	   */
     }
   }
 }
