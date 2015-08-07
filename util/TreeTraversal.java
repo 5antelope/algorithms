@@ -1,3 +1,5 @@
+http://datastructuresnotes.blogspot.com/2009/02/binary-tree-traversal-preorder-inorder.html
+
 public void preorder(TreeNode root) {
   TreeNode cur = null;
   LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
