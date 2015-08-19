@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+// the basic idea behind merge sort is simply divide & conquer
+ 
 public class MergeSort {
     public static void mergeSort(int[] array) {
         // need a new array. becuz the old one is used to provide elements
@@ -24,6 +26,8 @@ public class MergeSort {
             else
                 tmp[index] = arr[j++];
         }
+        
+        // finish up the rest of list
         while (i<m)
             tmp[index++] = arr[i++];
         while (j<r)
@@ -31,8 +35,8 @@ public class MergeSort {
 
         System.arraycopy(tmp,l,arr,l,r-l); // update sub-array!
     }
-    public static void main(String[] args)
-    {
+    
+    public static void main(String[] args) {
         int[] a = {2, 3, 2, 1};
         mergeSort(a);
         System.out.println(Arrays.toString(a));
