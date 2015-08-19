@@ -57,7 +57,9 @@ public void postorder(TreeNode root) {
   TreeNode pre = null;  // last pushed node
   while (!stack.isEmpty()) {
       cur = stack.peek();
-      if (cur.left==null && cur.right==null || cur.left==pre || cur.right==pre) {
+      if (cur.left==null && cur.right==null 
+        || cur.left==pre && pre!=null 
+        || cur.right==pre && pre!=null ) {
           // mark as visited
           pre = cur;
           System.out.println(stack.pop().val);
