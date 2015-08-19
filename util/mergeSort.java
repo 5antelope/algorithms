@@ -2,10 +2,12 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void mergeSort(int[] array) {
-        int[] res = new int[array.length];  // need a new array. because the old one is used to provide elements
+        // need a new array. becuz the old one is used to provide elements
+        int[] res = new int[array.length];  
         subroutine(array, res, 0, array.length);
     }
     public static void subroutine (int[] arr, int[] tmp, int l, int r) {
+        // divide util only one element left
         if (l<r-1) {
             int mid = (l + r) / 2;
             subroutine(arr, tmp, l, mid);
