@@ -1,4 +1,13 @@
-http://datastructuresnotes.blogspot.com/2009/02/binary-tree-traversal-preorder-inorder.html
+/**
+ * http://datastructuresnotes.blogspot.com/2009/02/binary-tree-traversal-preorder-inorder.html
+ * 
+ * both pre/post order:
+ *    stack.push(root)
+ *    cur = null
+ * 
+ * only in order:
+ *    cur = root
+ */
 
 public void preorder(TreeNode root) {
   TreeNode cur = null;
