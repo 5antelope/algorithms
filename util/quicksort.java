@@ -21,8 +21,9 @@ public class QuickSort {
   private int partition(int[] array, int l, int r) {
     int pivot = array[l];
     while (l<r) {
-      // order matters
-      while(l<r && array[r]>=pivot)   // leave equal element unchange
+      // 1. order matters
+      // 2. leave EQUAL element unchange
+      while(l<r && array[r]>=pivot)
         r--;
       // just replace, no need for swap  
       array[l] = array[r];
