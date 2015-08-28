@@ -8,6 +8,7 @@ public class LRUCache {
 
     HashMap<Integer, CacheNode> cache;
     CacheNode head, tail;
+    // capacity, size to track if cache exceed max size
     int capacity, size;
 
     public LRUCache(int capacity) {
@@ -18,41 +19,68 @@ public class LRUCache {
     }
 
     public int get(int key) {
-        if (!cache.containsKey(key)) return -1;
+        // cache miss
+        if (!cache.containsKey(key)) 
+            return -1;
+        
         CacheNode node = cache.get(key);
-        if (node==head) return node.val;
-        if (node==tail) tail = tail.pre;
-        else {node.next.pre = node.pre;}
+        
+        // update cache: head; tail; middle
+        if (node==head) 
+            return node.val;
+            
+        if (node==tail) 
+            tail = tail.pre;
+        // some place in the middle
+        else
+            node.next.pre = node.pre;
+        
+        // move this node to the head of cache
         node.pre.next = node.next;
         node.next = head;
         head.pre = node;
         node.pre = null;
         head = node;
+        
         return node.val;
     }
 
     public void set(int key, int value) {
         if (!cache.containsKey(key)) {
             CacheNode node = new CacheNode(key, value);
+            
             if (size==capacity) {
+                // update tail pointer
                 cache.remove(tail.key);
                 tail = tail.pre;
-                if (tail!=null) tail.next = null;
+                if (tail!=null) 
+                    tail.next = null;
             }
-            if (tail==null) tail=node;
+            
+            if (tail==null) // empty cache
+                tail=node;
             node.next = head;
-            if (head!=null) head.pre = node;
+            if (head!=null) 
+                head.pre = node;
             head = node;
             cache.put(key, node);
+            
+            // update size
             size = size==capacity?capacity:size+1;
         }
-        // update cache with same key
+        // update cache with existing key
         else {
             CacheNode node = cache.get(key);
             node.val = value;
-            if (node==head) return;
-            if (node==tail) tail = tail.pre;
-            else {node.next.pre = node.pre;}
+            
+            // update position: head; tail; middle
+            if (node==head) 
+                return;
+                
+            if (node==tail) 
+                tail = tail.pre;
+            else 
+                node.next.pre = node.pre;
             node.pre.next = node.next;
             node.next = head;
             head.pre = node;
@@ -60,8 +88,4 @@ public class LRUCache {
             head = node;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d5f7143cc02b8890bdcbdf5cc621cfcb9d05e195
