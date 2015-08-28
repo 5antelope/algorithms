@@ -1,11 +1,11 @@
 public class Solution {
     int cnt;
     int upper;
-    
+
     public int totalNQueens(int n) {
         cnt = 0;
         upper = (1<<n)-1 ;
-        backtrace(0,0,0);         
+        backtrace(0,0,0);
         return cnt;
     }
 
