@@ -60,4 +60,8 @@ public class LRUCache {
             head = node;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d5f7143cc02b8890bdcbdf5cc621cfcb9d05e195
