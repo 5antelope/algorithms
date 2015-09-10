@@ -2,6 +2,8 @@
     DP
     to check (i,j) is palidrome or not :
         (i,j) = (i+1,j-1) && s[i]==s[j]
+        
+    Character.isLetterOrDigit() 
 */
 public class Solution {
     public String longestPalindrome(String s) {
