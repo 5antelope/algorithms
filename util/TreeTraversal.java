@@ -25,75 +25,37 @@ public void preorder(TreeNode root) {
 }
 
 public void inorder(TreeNode root) {
+  List<Integer> res = new ArrayList<Integer>();
+        
+  if (root==null)
+      return res;
+  
+  TreeNode pre = null, cur = null;
+  
   LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
-  /**
-   * left - root - right
-   * unlike preorder, cannot use cur.left / cur.right to track. 
-   * otherwise might get into loop (go left vs. visit cur): deal only with cur!
-  */
-  TreeNode cur = root;
-  while (!stack.isEmpty() || cur!=null) { // "左死-右死"
-    if (cur!=null) {
-      stack.push(cur);
-      cur = cur.left;
-    }
-    else { // leaf node or only has right child
-      cur = s.pop();
-      System.out.println(cur.val);
-      cur = cur.right;
-    /* visualization of case: 
-     *   x
-     *    \  
-     *     y
-     */
-    }
-  }
-}
-
-public void postorder(TreeNode root) {
-  if(root == null)
-      return; 
-
-  Stack<TreeNode> stack = new Stack<TreeNode>();
   stack.push(root);
-
-  TreeNode prev = null;
-  while(!stack.empty()){
-      TreeNode curr = stack.peek();
-
-      // go down the tree.
-      //check if current node is leaf, if so, process it and pop stack,
-      //otherwise, keep going down
-      if(prev == null || prev.left == curr || prev.right == curr){
-          //prev == null is the situation for the root node
-          if(curr.left != null){
-              stack.push(curr.left);
-          }else if(curr.right != null){
-              stack.push(curr.right);
-          }else{
-              stack.pop();
-              System.out.println(curr.val);
-          }
-
-      //go up the tree from left node    
-      //need to check if there is a right child
-      //if yes, push it to stack
-      //otherwise, process parent and pop stack
-      }else if(curr.left == prev){
-          if(curr.right != null){
-              stack.push(curr.right);
-          }else{
-              stack.pop();
-              System.out.println(curr.val);
-          }
-
-      //go up the tree from right node 
-      //after coming back from right node, process parent node and pop stack. 
-      }else if(curr.right == prev){
-          stack.pop();
-          System.out.println(curr.val);
+  
+  while (!stack.isEmpty()) {
+      
+      cur = stack.peek();
+      
+      // only cases to print element:
+      // 1. leaf (left==null & right=null)
+      // 2. post-order (i.e., children have been visited): 
+      //      cur.left == prev || cur.right == prev
+      if ( cur.left==null && cur.right==null
+          || cur.left == pre && pre!=null 
+          || cur.right == pre && pre!=null ) {
+          pre = cur;
+          res.add(stack.pop().val);
       }
-
-      prev = curr;
+      else {
+          if (cur.right!=null)
+              stack.push(cur.right);
+          if (cur.left!=null)
+              stack.push(cur.left);
+      }
   }
+  
+  return res;
 }
