@@ -1,41 +1,54 @@
 public class Solution {
     public boolean isMatch(String s, String p) {
-        int m = s.length(), n = p.length();
+        int strLen = s.length();
+        int ptnLen = p.length();
         
-        boolean dp[][] = new boolean[m+1][n+1];
+        boolean[][] dp = new boolean[strLen+1][ptnLen+1];
         
+        // dp[i][j]: match with s (len=i) && p (len=j)
         dp[0][0] = true;
         
-        // i: i chars in s; 
-        // j: j chars in p
-        for (int i=1; i<=n; i++)
-            dp[0][i] = i-2>=0 && p.charAt(i-1)=='*' && dp[0][i-2];
+        // handle case where s len=0
+        for (int i=1; i<=ptnLen; i++)
+            dp[0][i] = 
+                // check from 2nd char    
+                    i>=2 
+                // char at cur position is *
+                && p.charAt(i-1)=='*'
+                // previous string is a match
+                && dp[0][i-2] == true;
         
-        for (int i=1; i<=m; i++) {
-            for (int j=1; j<=n; j++) {
-                // current is not *
-                if (p.charAt(j-1) != '*')
-                    dp[i][j] = dp[i-1][j-1] && equal(s, p, i-1, j-1);
+        for (int i=1; i<=strLen; i++) {
+            for (int j=1; j<=ptnLen; j++) {
+                // s len = i;
+                // p len = j;
                 
-                // current is *    
+                if (p.charAt(j-1)!='*')
+                    dp[i][j] = dp[i-1][j-1] && match(s,p,i-1,j-1);
+                
                 else {
-                    // p[j-2]: char before *
-                    dp[i][j] = j-2>=0 && dp[i][j-2]   // ignore element in pattern
-                        // *: multiple elements
-                        // dp[i-1][j]: element at p[j-1] matches s[i-2] already.
-                        // check if p[j-1] matches s[i-1] alse
-                        || dp[i-1][j] && equal(s, p, i-1, j-2)   // incomming s = element
-                        // dp[i][j-1]: s[i-1] matches p[j-2]
-                        // take only one element (actually no need for equal(s, p, i-1, j-2) judge)
-                        || dp[i][j-1] && equal(s, p, i-1, j-2);  // take only one element
+                    // '*' can have one of three cases:
+                    // 1. match 0 of prev char
+                    // 2. match one and only prev char
+                    // 3. match more than one prev char
+                    dp[i][j] = 
+                            j>=2 && dp[i][j-2]
+                        || dp[i][j-1]
+                            // case where '*' match more than one prev char
+                            // dp[i-1][j]: s with len=i-1 also match util cur pattern
+                            // s[i-1]==p[j-2]: cur char in s matches char in p before '*'
+                        || dp[i-1][j] && match(s,p,i-1,j-2);
                 }
             }
         }
         
-        return dp[m][n];
+        return dp[strLen][ptnLen];
     }
     
-    private boolean equal(String a, String b, int x, int y) {
-        return b.charAt(y)=='.' || a.charAt(x) == b.charAt(y);
+    private boolean match(String a, String b, int x, int y) {
+        char m = a.charAt(x);
+        char n = b.charAt(y);
+        if (m==n || n=='.')
+            return true;
+        return false;
     }
-}
